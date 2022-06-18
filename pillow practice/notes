@@ -1,0 +1,69 @@
+practice exercises based off of:
+
+https://automatetheboringstuff.com/chapter17/#calibre_link-136
+
+>>> from PIL import Image
+>>> cat_pic= Image.open("cat.png")
+>>> cat_pic.size
+(400, 533)
+>>> cat_pic.filename
+'cat.png'
+>>> width, height = cat_pic.size
+>>> width
+400
+>>> height
+533
+>>> cat_pic.format
+'JPEG'
+>>> cat_pic.format_description
+'JPEG (ISO 10918)'
+>>> cat_pic.save("cat.png")
+>>> from PIL import Image
+>>> im = Image.new("RGBA", (100,200), "purple")
+>>> im.save("purpleImage.png"
+... )
+>>> im2 = Image.new("RGBA", (20,20))
+>>> im2.save("transparentImage.png")
+>>> faceIm = cat_pic.crop((150, 160, 250, 260))
+>>> faceIm.size
+(100, 100)
+>>> catPicCopy = cat_pic.copy()
+>>> catPicCopy.paste(faceIm, (0,0))
+>>> catPicCopy.paste(faceIm, (400,500))
+>>> catPicCopy.save("pasted.png")
+>>> catPicCopy.paste(faceIm, (120,130))
+>>> catPicCopy.save("pasted.png")
+>>> picWidth, picHeight = cat_pic.size
+>>> faceWidth, faceHeight = faceIm.size
+>>> catCopyTwo=cat_pic.copy()
+>>> for left in range(0, picWidth, faceWidth):
+...     for top in range(0, picHeight, faceHeight):
+...             print(left,top)
+...             catCopyTwo.paste(faceIm, (left,top))
+...
+0 0
+0 100
+0 200
+0 300
+0 400
+0 500
+100 0
+100 100
+100 200
+100 300
+100 400
+100 500
+200 0
+200 100
+200 200
+200 300
+200 400
+200 500
+300 0
+300 100
+300 200
+300 300
+300 400
+300 500
+>>> catCopyTwo.save("tiled.png")
+>>>
