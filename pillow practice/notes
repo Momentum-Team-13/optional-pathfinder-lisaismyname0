@@ -89,3 +89,5 @@ https://towardsdatascience.com/creating-beautiful-topography-maps-with-python-ef
 ^helpful notes on creating color map
 
 https://www.earthinversion.com/utilities/pygmt-high-resolution-topographic-map-in-python/
+
+- each list is 25 x 20 500 values
