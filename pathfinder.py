@@ -64,4 +64,7 @@ with open("elevation_small.txt") as elevation_text:
 
     # i want to assign each elevation an RGB value to plot with the point(xy, fill) method
 
+    """for example:
+        if value = 1, RGB value = [0, 0, 0]"""
+
     """The point(xy, fill) method draws individual pixels. The xy argument represents a list of the points you want to draw. The list can be a list of x- and y-coordinate tuples, such as [(x, y), (x, y), ...], or a list of x- and y-coordinates without tuples, such as [x1, y1, x2, y2, ...]. The fill argument is the color of the points and is either an RGBA tuple or a string of a color name, such as 'red'. The fill argument is optional."""
