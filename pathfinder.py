@@ -8,7 +8,6 @@ with open("elevation_small.txt") as elevation_text:
     x_values = len(x1)
     min_elevation1 = min(x1)
     max_elevation1 = max(x1)
-    a = []
     elevation_dict1 = {str(key): x1[key] for key in range(0, len(x1))}
     for num in elevation_dict1.values():
         # here I color code all of the values within my dictionary
@@ -59,17 +58,24 @@ with open("elevation_small.txt") as elevation_text:
         elif num >= 5300 and num <= 5399:
             color_code = 16
             # print(f"{num}'s color code is {color_code}")
+
     map = Image.new("RGBA", (600, 600), "white")
-    print(type(map))
-    # here I want to let the spot on the x axis = num(key) and then use the color code of its value to map.putpixel()
-    for key in elevation_dict1:
-        x = f"{key}"
-    for x in range(599):
-        print(x, 1)
-        map.putpixel((x, 1), (100, 100, 100))
+    for key, value in elevation_dict1.items():
+        if key <= ("599"):
+            x = f"{key}"
+            value = int(value)
+            if value >= 3859 and value <= 3899:
+                color_code = 1
+                print(f"Coordinates:({x}x, 1y)")
+                print(f"Color Code:{color_code} | Elevation: {value}")
+    """for x in range(599):
+            if color_code == 1:
+                map.putpixel((x, 1), (100, 100, 100))
+                print(color_code)
+            if color_code == 2:
+                map.putpixel(x, 1), (200, 200, 200)
+            else:
+                break"""
     print(map.getpixel((1, 1)))
     print(map.getpixel((0, 0)))
-
     map.save("map2.png")
-
-"""The point(xy, fill) method draws individual pixels. The xy argument represents a list of the points you want to draw. The list can be a list of x - and y-coordinate tuples, such as [(x, y), (x, y), ...], or a list of x - and y-coordinates without tuples, such as [x1, y1, x2, y2, ...]. The fill argument is the color of the points and is either an RGBA tuple or a string of a color name, such as 'red'. The fill argument is optional."""
