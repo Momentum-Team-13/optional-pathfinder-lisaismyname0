@@ -59,7 +59,15 @@ with open("elevation_small.txt") as elevation_text:
         elif int(key) >= 5300 and int(key) <= 5399:
             value = 16
             print(value)
-    map = Image.new("RGBA", (x_values, y_values))
+    map = Image.new("RGBA", (x_values, y_values), "white")
+    for x in range(600):
+        for y in range(1):
+            if value == 1:
+                map.putpixel((x, y), "black")
+            if value == 2:
+                map.putpixel((x, y), "red")
+            if value == 3:
+                map.putpixel((x, y), "green")
     map.save("map2.png")
 
     # i want to assign each elevation an RGB value to plot with the point(xy, fill) method
