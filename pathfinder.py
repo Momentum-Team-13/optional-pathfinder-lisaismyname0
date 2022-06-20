@@ -25,15 +25,12 @@ with open("elevation_small.txt") as elevation_text:
     x_values = len(x1)
     min_elevation1 = min(x1)
     max_elevation1 = max(x1)
-    dict = []
-    for num, elevation in zip(list, x1):
-        key, value = f"{num}", f"{elevation}"
-        dict.append(f"{key, value}")
-    print(dict)
-    # keys = {f"{i}"}
-    # for item in x1:
-    # print(item)
-    # print(f"{keys}", ":", f"{item}")
+    a = []
+    elevation_dict1 = {i: x1[i] for i in range(0, len(x1))}
+    print(elevation_dict1)
+    print(len(elevation_dict1))
+
+    # from here I want to use the draw.point()function where, key = position on x axis and y = the number of the list.... from there i can assign each dict value an rgb value
 
     # i want to assign each elevation an RGB value to plot with the point(xy, fill) method
 
