@@ -53,3 +53,10 @@ for i in range(5):
             elif value >= 5300 and value <= 5399:
                 color_code = 16
                 print(color_code)
+
+    y1 = elevation_grid[0].split()
+    y_values = len(elevation_grid)
+    x_values = len(y1)
+    min_elevation1 = min(y1)
+    max_elevation1 = max(y1)
+    elevation_dict0 = {str(key): y1[key] for key in range(0, len(y1))}
